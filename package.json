@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy":"gh-pages -d dist"
+    "deploy":"build && gh-pages -d dist"
   },
   "dependencies": {
     "vue": "^3.2.45",
