@@ -1,29 +1,25 @@
 # portfolio
 
-Este es el proyecto de portafolio para los proyectos
+Este es el proyecto de portafolio para los proyectos en github.
 
-## Recommended IDE Setup
+## Pre-requisitos
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+Instalar las dependencias
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+## Servidor de desarrollo
+
+para utilizar el servidor de desarrollo
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+## Desplegar en github pages
 
 ```sh
-npm run build
+npm run deploy
 ```
