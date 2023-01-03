@@ -2,7 +2,7 @@
 const saludo = "Hola";
 const nombre = "Soy Edson Cuno"
 const titulo = "Estudiante de Ingeniería Informática";
-const mensaje = "I made this template for everyone who needs to create a personal website easily and quickly. This template includes Project Section, CV Section, Store, Paginated Blog, RSS Feed, SEO Friendly, Responsive Desing and 29 Visual themes. I hope you find it useful!";
+const mensaje = "Soy Edson Diego Cuno Tipso. Nací y resido en Lima - Perú. Soy estudiante de la Universidad Ricardo Palma, interesado en el desarrollo de aplicaciones y servicos web.";
 </script>
 
 <template>
@@ -10,7 +10,7 @@ const mensaje = "I made this template for everyone who needs to create a persona
         <div class="saludo">{{ saludo }}</div>
         <div class="nombre">{{ nombre }}</div>
         <div class="titulo">{{ titulo }}</div>
-        <div class="mensaje">{{mensaje}}</div>
+        <div class="mensaje">{{ mensaje }}</div>
     </div>
 </template>
 <style scoped lang="scss">
