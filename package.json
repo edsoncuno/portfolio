@@ -9,6 +9,7 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
+    "html2pdf.js": "^0.9.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },

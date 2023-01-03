@@ -5,6 +5,7 @@ defineProps({
     route: String,
     text: String
 })
+
 </script>
 
 <template>
@@ -20,22 +21,26 @@ defineProps({
     width: 100%;
 
     button {
-        background-color: transparent;
+        background-color: white;
         height: 3rem;
         width: 100%;
-        border: 0px transparent solid;
+        border: 2px black solid;
         border-radius: 0.5rem;
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: bold;
+        margin-bottom: 0.5rem;
+        transition: all 0.2s;
     }
 
     button:hover {
-        background-color: Gainsboro;
+        background-color: #a4a7a8;
     }
 
     button:active {
-        background-color: black;
+        border: 2px white solid;
+        background-color: #061a2f;
         color: white;
     }
+
 }
 </style>

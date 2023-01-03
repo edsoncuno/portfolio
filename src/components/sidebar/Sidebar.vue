@@ -13,7 +13,7 @@
 <style>
 .sidebar {
     position: fixed;
-    background-color: #f6f6f6;
+    background: url("https://i.postimg.cc/sgQYKHQf/cloud-1600x2400.jpg");
     height: 100vh;
     width: 20vw;
     display: grid;
