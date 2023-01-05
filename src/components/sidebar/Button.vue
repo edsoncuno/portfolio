@@ -33,12 +33,12 @@ defineProps({
     }
 
     button:hover {
-        background-color: #a4a7a8;
+        background-color: #D3D3D3;
     }
 
     button:active {
         border: 2px white solid;
-        background-color: #061a2f;
+        background-color: #415D65;
         color: white;
     }
 

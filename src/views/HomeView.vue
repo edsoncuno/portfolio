@@ -1,6 +1,7 @@
 <script setup>
 import Presentation from "../components/home/Presentation.vue";
 import Cards from "../components/cards/Cards.vue";
+import Herramientas from "../components/home/Herramientas.vue";
 
 const titulo = "Mis Proyectos"
 const items = [
@@ -16,6 +17,7 @@ const items = [
 <template>
   <main class="homeview">
     <Presentation />
+    <Herramientas />
     <Cards :titulo="titulo" :items="items" />
   </main>
 </template>
