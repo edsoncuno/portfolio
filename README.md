@@ -4,15 +4,18 @@ Este es el proyecto de portafolio para los proyectos en github.
 
 ## Pre-requisitos
 
-Instalar las dependencias
+Tener instalado Node.js
+
+https://nodejs.org/en/download/
+
+## Uso
+
+Para poder utilizarlo hay que instalar las dependencias 
 
 ```sh
-npm install
+npm run dev
 ```
-
-## Servidor de desarrollo
-
-para utilizar el servidor de desarrollo
+Luego levantar el servidor de desarrollo
 
 ```sh
 npm run dev
