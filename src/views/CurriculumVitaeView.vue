@@ -240,7 +240,7 @@ main {
     @media all and (max-width: 850px) {
         .container {
             width: 100%;
-            height: 100vh;
+            height: 94vh;
             background: url("https://i.postimg.cc/h4TPZh4n/pexels-life-of-pix-8892.jpg");
             background-position: center;
             background-size: cover;
