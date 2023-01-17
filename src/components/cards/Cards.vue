@@ -20,11 +20,11 @@ defineProps({
 
 <style scoped lang="scss">
 .style {
-    margin: 1.5rem 0rem;
-
+    width: 100%;
     .titulo {
         font-size: 2rem;
         font-weight: bold;
+        margin-bottom: 1rem;
     }
 }
 </style>

@@ -9,9 +9,9 @@ defineProps({
 
 <template>
     <a :href=href target="_blank">
-        <div class="style">
+        <div class="container">
             <div class="imagen">
-                <img :src="src" :alt="titulo" />
+                <img :src="src" alt="" />
             </div>
             <div class="descripcion">
                 <div class="titulo">{{ titulo }}</div>
@@ -24,17 +24,17 @@ defineProps({
 <style scoped lang="scss">
 a {
     text-decoration: none;
-    color: black;
 
-    .style {
-        display: grid;
-        grid-template-columns: 30% 1fr;
-        grid-template-rows: 1fr;
+    .container {
+        color: black;
+        display: flex;
+        flex-wrap: wrap;
         border-radius: 1rem;
-        transition: transform 0.25s;
+        transition: all 0.25s ease;
 
         .imagen {
             padding: 1rem;
+            width: 30%;
 
             img {
                 width: 100%;
@@ -45,6 +45,7 @@ a {
         }
 
         .descripcion {
+            width: 70%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -59,11 +60,43 @@ a {
                 font-size: 1rem;
             }
         }
+
+        @media all and (max-width: 890px) {
+            .imagen {
+                margin: 0 auto;
+                width: 50%;
+
+                img {
+                    height: 8rem;
+                }
+            }
+
+            .descripcion {
+                width: 100%;
+                align-items: center;
+                padding: 0 0.5rem;
+                .mensaje {
+                    text-align: justify;
+                }
+            }
+        }
+
+        @media all and (max-width: 600px) {
+            .imagen {
+                width: 80%;
+            }
+        }
     }
 
-    .style:hover {
+    @media all and (max-width: 890px) {
+        .container {
+            padding-bottom: 0.5rem;
+        }
+    }
+
+    .container:hover {
         box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.2);
-        transform: scale(1.02)
+        transform: scale(1.01)
     }
 }
 </style>

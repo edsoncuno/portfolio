@@ -1,24 +1,22 @@
-<template>
-    <Layout />
-</template>
-
 <script setup>
 import Layout from "./components/Layout.vue";
 </script>
 
+<template>
+  <Layout />
+</template>
+
 <style>
-html {
-  font-family: system-ui, sans-serif;
-  font-size: 16px;
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-}
-
-code {
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  font-family: "Comfortaa", cursive;
+  font-size: 16px;
 }
 </style>

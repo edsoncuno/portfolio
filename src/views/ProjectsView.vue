@@ -25,14 +25,13 @@ const endesarrollo = {
 }
 </script>
 <template>
-    <main class="proyectosview">
+    <main>
         <Cards :titulo="desarrollos.titulo" :items="desarrollos.items" />
         <Cards :titulo="endesarrollo.titulo" :items="endesarrollo.items" />
     </main>
 </template>
 <style scoped>
-.proyectosview {
-    margin: 0rem 5rem 0rem 25rem;
-    padding-top: 3rem;
+main {
+    padding: 3rem;
 }
 </style>

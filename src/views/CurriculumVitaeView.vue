@@ -1,8 +1,7 @@
 <script setup>
 import html2pdf from "html2pdf.js";
-import Button from "../components/cv/Button.vue";
 
-const descargar = () => {
+function descargar() {
     let element = document.getElementById("element-to-print");
     let opt = {
         filename: 'curriculum-vitae.pdf',
@@ -10,7 +9,9 @@ const descargar = () => {
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
     };
     html2pdf().from(element).set(opt).save();
-};
+}
+
+/** DATOS*/
 
 const cursos = [
     {
@@ -62,16 +63,16 @@ const datos = [
     { nombre: "DNI", valor: "73205427" },
 ];
 
-const stylepage = {
+/** STYLE */
+
+const styleBorder = {
     width: "794px",
     height: "1120px",
-    display: "flex",
-    alignItems: "center",
     boxShadow: "0px 15px 15px 15px rgba(0, 0, 0, 0.2)"
 }
 
-const stylecv = {
-
+const styleCv = {
+    fontFamily: "system-ui, sans-serif"
 }
 const styleTitulo = {
     width: "100%",
@@ -94,7 +95,7 @@ const styleColumnaIzquierda = {
 }
 
 const styleColumnaDerecha = {
-    paddingLeft: "0.5rem"
+    paddingLeft: "2rem"
 }
 
 const styleSubtitulo = {
@@ -141,61 +142,109 @@ const styleEducacionBox = {
     margin: "1rem 0rem",
 }
 
-
 </script>
-
 <template>
-    <main class="view">
-        <Button text="Descargar CV como pdf" :onclick="descargar" />
-        <div class="cv" id="element-to-print" :style="stylepage">
-            <div :style="stylecv">
-                <div :style="styleTitulo">Curriculum Vitae</div>
-                <div :style="styleColumnas">
-                    <div :style="styleColumnaIzquierda">
-                        <div :style="styleSubtitulo">Información de contacto</div>
-                        <div :style="styleDato" v-for="item in datos">
-                            <div :style="styleDatoNombre">{{ item.nombre }}</div>
-                            <div :style="styleDatoValor">{{ item.valor }}</div>
-                        </div>
-                    </div>
-                    <div :style="styleColumnaDerecha">
-                        <div :style="styleNombre">Edson Diego Cuno Tipso</div>
-                        <div :style="styleDato">
-                            <div :style="styleDatoNombre">Portafolio de proyectos</div>
-                            <div :style="styleDatoValor"><a :style="styleDatoLink " href="https://edsoncuno.github.io/portfolio/"
-                                    target="_blank">https://edsoncuno.github.io/portfolio/</a>
+    <main>
+        <div class="container">
+            <button @click="descargar">Descargar CV como pdf</button>
+            <div class="sheet" id="element-to-print" :style="styleBorder">
+                <div :style="styleCv">
+                    <div :style="styleTitulo">Curriculum Vitae</div>
+                    <div :style="styleColumnas">
+                        <div :style="styleColumnaIzquierda">
+                            <div :style="styleSubtitulo">Información de contacto</div>
+                            <div :style="styleDato" v-for="item in datos">
+                                <div :style="styleDatoNombre">{{ item.nombre }}</div>
+                                <div :style="styleDatoValor">{{ item.valor }}</div>
                             </div>
                         </div>
-                        <div :style="styleSubtitulo">Educación</div>
-                        <div :style="styleSubSubtitulo">Superior</div>
-                        <div v-for="item in superior" :style="styleEducacionBox">
-                            <div>{{ item.nombre }}</div>
-                            <div>{{ item.lugar }}</div>
-                            <div>{{ item.fecha }}</div>
+                        <div :style="styleColumnaDerecha">
+                            <div :style="styleNombre">Edson Diego Cuno Tipso</div>
+                            <div :style="styleDato">
+                                <div :style="styleDatoNombre">Portafolio de proyectos</div>
+                                <div :style="styleDatoValor"><a :style="styleDatoLink"
+                                        href="https://edsoncuno.github.io/portfolio/"
+                                        target="_blank">https://edsoncuno.github.io/portfolio/</a>
+                                </div>
+                            </div>
+                            <div :style="styleSubtitulo">Educación</div>
+                            <div :style="styleSubSubtitulo">Superior</div>
+                            <div v-for="item in superior" :style="styleEducacionBox">
+                                <div>{{ item.nombre }}</div>
+                                <div>{{ item.lugar }}</div>
+                                <div>{{ item.fecha }}</div>
+                            </div>
+                            <div :style="styleSubSubtitulo">Cursos</div>
+                            <div v-for="item in cursos" :style="styleEducacionBox">
+                                <div>{{ item.nombre }}</div>
+                                <div>{{ item.lugar }}</div>
+                                <div>{{ item.fecha }}</div>
+                            </div>
+                            <div :style="styleSubtitulo">Herramientas y software utilizados</div>
+                            <ul>
+                                <li v-for="item in utilizados">{{ item }}</li>
+                            </ul>
                         </div>
-                        <div :style="styleSubSubtitulo">Cursos</div>
-                        <div v-for="item in cursos" :style="styleEducacionBox">
-                            <div>{{ item.nombre }}</div>
-                            <div>{{ item.lugar }}</div>
-                            <div>{{ item.fecha }}</div>
-                        </div>
-                        <div :style="styleSubtitulo">Herramientas y software utilizados</div>
-                        <ul>
-                            <li v-for="item in utilizados">{{ item }}</li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+
     </main>
 </template>
 
 <style scoped lang="scss">
-.view {
-    margin-left: 20rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 0rem;
+main {
+    padding: 0 3rem;
+
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        button {
+            font-family: "Comfortaa", cursive;
+            width: 60%;
+            height: 5rem;
+            border-radius: 1rem;
+            background-color: #415D65;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        @media all and (max-width: 850px) {
+            .sheet {
+                display: none;
+            }
+
+            button {
+                margin: auto;
+            }
+        }
+
+        @media all and (max-width: 650px) {
+            button {
+                width: 90%;
+                //margin: auto;
+            }
+        }
+    }
+
+    @media all and (max-width: 850px) {
+        .container {
+            width: 100%;
+            height: 100vh;
+            background: url("https://i.postimg.cc/h4TPZh4n/pexels-life-of-pix-8892.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+    }
 }
 </style>
